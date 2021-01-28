@@ -1,0 +1,101 @@
+.tarefa {
+  display: flex;
+  padding: 10px 15px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.tarefa:nth-child(even) {
+  background-color: #eee;
+}
+
+.tarefa:last-of-type {
+  border-bottom: 0;
+}
+
+.tarefa .id {
+  flex: 1 1 50px;
+}
+
+.tarefa .task {
+  flex: 1 1 100%;
+}
+
+.tarefa.done .task {
+  text-decoration: line-through;
+}
+
+.tarefa.done {
+  background-color: #00ff00;
+}
+
+.todo-input {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  appearance: none;
+  border: none;
+  background-color: #f3f3f3;
+  margin-top: 15px;
+  font-size: 20px;
+  outline: none;
+}
+
+.todo-submit {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+
+  background-color: #0085ff;
+  color: #fff;
+  margin: 15px auto;
+
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.editButton {
+  display: flex;
+  width: 50%;
+  max-width: 200px;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+
+  background-color: #0085ff;
+  color: #fff;
+  margin: 10px;
+
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: 120;
+}
+
+.lowerButton {
+  display: flex;
+  width: 100%;
+  max-width: 100px;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  justify-content: center;
+
+  background-color: #0085ff;
+  color: #fff;
+  margin: 10px;
+
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 120;
+}
+
+#redbutton {
+  background-color: #ee0202;
+}

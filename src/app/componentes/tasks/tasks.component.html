@@ -1,0 +1,52 @@
+<div class="tasks">
+    <form (submit)="addTodo()">
+        <input 
+            type="text"
+            name="inputTitle"
+            placeholder="Insira tarefa"
+            class="todo-input"
+            [(ngModel)]="inputTitle"
+        />
+        <input
+            type="text"
+            name="inputContent"
+            placeholder="Insira descrição da tarefa" 
+            class="todo-input"
+            [(ngModel)]="inputContent"
+        />
+        <input type="submit" value="Adicionar tarefa" class="todo-submit">
+    </form>
+
+    <div *ngFor="let tarefa of tasks; let i = index;" class="tarefa {{ (tarefa.completed ? 'done' : '')}}" >
+        <form>
+        <h2 (click)="toggleDone(i)" class="task" [hidden] = "tarefa.isEdit">{{ tarefa.title }}</h2>
+        <p (click)="toggleDone(i)" class="task" [hidden]="tarefa.isEdit">{{ tarefa.content }}</p>
+
+        <div [hidden]="!tarefa.isEdit">
+            <input
+                type="text"
+                name="substituteTitle"
+                placeholder="{{tarefa.title}}"
+                class="todo-input"
+                [(ngModel)]="titleEdit"
+                required
+            />
+            <input
+                type="text"
+                name="substituteContent"
+                placeholder="{{tarefa.content}}"
+                class="todo-input"
+                [(ngModel)]="contentEdit"
+                required
+            />
+            <button class="editButton" (click)="doneEdit(i)">Confirmar</button>
+            <button id= "redbutton" class="editButton" (click)="cancelEdit(i)">Cancelar</button>
+        </div>
+        
+        <div [hidden]="tarefa.isEdit">
+            <button class="lowerButton" (click)="EditTodo(i)">Editar</button>
+            <button id="redbutton" class="lowerButton" (click)="deleteTodo(i)">Remover</button>
+        </div>
+        </form>
+    </div>
+</div>
